@@ -3,3 +3,4 @@
 *.L5X
 *.mer
 *.apa
+*.Sem
