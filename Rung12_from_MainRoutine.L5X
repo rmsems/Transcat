@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.02" TargetType="Rung" TargetCount="1" ContainsContext="true" ExportDate="Thu May 01 12:05:08 2025" ExportOptions="References NoRawData L5KData DecoratedData Context RoutineLabels AliasExtras IOTags NoStringData ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="Transcat">
+<DataTypes Use="Context">
+<DataType Name="Acrison_Feeder" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[Acrison Feeder Tags]]>
+</Description>
+<Members>
+<Member Name="ZZZZZZZZZZAcrison_Fe0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="AutoMan" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZAcrison_Fe0" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[On  - Auto Control - follows AutoRun bit,  Off - Manaul Control - follows Manual Run bit]]>
+</Description>
+</Member>
+<Member Name="ManualRun" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZAcrison_Fe0" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[On - Runs feeder in Manual, Off - Stops feeder in manual]]>
+</Description>
+</Member>
+<Member Name="AutoRun" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZAcrison_Fe0" BitNumber="2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[On - Runs feeder in Auto Off - Stops feeder in Auto]]>
+</Description>
+</Member>
+<Member Name="Interlock" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZAcrison_Fe0" BitNumber="3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Interlock bit - if on - Feeder will not run]]>
+</Description>
+</Member>
+<Member Name="Output" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZAcrison_Fe0" BitNumber="4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[On - Feeder runs, Off Feeder stops]]>
+</Description>
+</Member>
+<Member Name="Int_Status" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[32 Status bits from feeder]]>
+</Description>
+</Member>
+<Member Name="SP_HMI" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[setpoint from HMI]]>
+</Description>
+</Member>
+<Member Name="SP_READ" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[setpoint read back from controller]]>
+</Description>
+</Member>
+<Member Name="ZZZZZZZZZZAcrison_Fe9" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="Enable" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZAcrison_Fe9" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Enable logic to run feeder]]>
+</Description>
+</Member>
+<Member Name="OT_Actual_Hz" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The current output of the VFD in Hz]]>
+</Description>
+</Member>
+<Member Name="FreqHz_Real" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The command frequency of the drive in Hz]]>
+</Description>
+</Member>
+<Member Name="CycleTime" DataType="TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[running time of current cycle]]>
+</Description>
+</Member>
+<Member Name="CampTime" DataType="TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[running time of current campaign / batch]]>
+</Description>
+</Member>
+<Member Name="TotalTime" DataType="TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[total time the device / motor has run since last reset]]>
+</Description>
+</Member>
+<Member Name="OneShots" DataType="BOOL" Dimension="32" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[32 Booleans to hold one-shots assicated with this device]]>
+</Description>
+</Member>
+<Member Name="TimeRunTarget" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Target Amount of time in seconds to run the device]]>
+</Description>
+</Member>
+<Member Name="StartDelay" DataType="TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Delay before motor start]]>
+</Description>
+</Member>
+<Member Name="StartDelayms" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Start delay in milliseconds]]>
+</Description>
+</Member>
+<Member Name="ZZZZZZZZZZAcrison_Fe20" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="TimeRunStart" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZAcrison_Fe20" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Bit to start and run a timed run]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+</DataTypes>
+<Tags Use="Context">
+<Tag Name="VF201" TagType="Base" DataType="Acrison_Feeder" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Small Feeder 2 Tags]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[[0,0,5.00000000e+000,0.00000000e+000,1,0.00000000e+000,3.00000000e+000,[1577995,288000000,13534
+		],[0,28800000,10001],[1577995,999999999,1964985],[2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+		,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0],0,[1577995,5000,0],5,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="Acrison_Feeder">
+<DataValueMember Name="AutoMan" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ManualRun" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AutoRun" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Interlock" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Output" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Int_Status" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="SP_HMI" DataType="REAL" Radix="Float" Value="5.0"/>
+<DataValueMember Name="SP_READ" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Enable" DataType="BOOL" Value="1"/>
+<DataValueMember Name="OT_Actual_Hz" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="FreqHz_Real" DataType="REAL" Radix="Float" Value="3.0"/>
+<StructureMember Name="CycleTime" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="288000000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="13534"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="CampTime" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="28800000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="10001"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<StructureMember Name="TotalTime" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="999999999"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="1964985"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<ArrayMember Name="OneShots" DataType="BOOL" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</ArrayMember>
+<DataValueMember Name="TimeRunTarget" DataType="DINT" Radix="Decimal" Value="0"/>
+<StructureMember Name="StartDelay" DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</StructureMember>
+<DataValueMember Name="StartDelayms" DataType="DINT" Radix="Decimal" Value="5"/>
+<DataValueMember Name="TimeRunStart" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+</Tags>
+<Programs Use="Context">
+<Program Use="Context" Name="MainProgram">
+<Routines Use="Context">
+<Routine Use="Context" Name="MainRoutine">
+<RLLContent Use="Context">
+<Rung Use="Target" Number="12" Type="N">
+<Text>
+<![CDATA[XIC(VF201.Enable)JSR(VF201_Small_Feeder_2_AcrisonVFD,0);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>
